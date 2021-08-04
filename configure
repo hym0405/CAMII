@@ -1,0 +1,104 @@
+# system setup
+house_bin=./bin
+parameters_dir=./parameters
+
+# image calibration
+calib_gaussian_kernal=(27,27)
+calib_gaussian_iteration=20
+calib_parameter_PATH=./parameters/calib_parameter.npz
+calib_contrast_trans_alpha=5
+calib_contrast_trans_beta=-100
+calib_contrast_trans_beta=-70
+
+# image crop
+cropYMin=150
+cropYMax=1150
+cropXMin=150
+cropXMax=1750
+
+# background removal
+bg_threshold_blockSize=501
+bg_threshold_offset=18
+
+# contour detection
+canny_upper_percentile=80
+
+# quality filtering
+minSize=30
+maxSize=500000
+minCircularity=0.2
+maxCircularity=1
+smallSizeArea=80
+smallSizeCircularity=0.85
+minConvexity=0.2
+maxConvexity=1
+minInertia=0.2
+maxInertia=1
+minDist=3
+minDist_pin=3
+circularity_threshold=0.85
+circularity_threshold_veryBad=0.5
+
+# multi-colony segmentation
+area_segment_min=300
+area_segment_max=50000
+segment_bias=10
+filter_bias=20
+size_subSample=10000
+post_minSize=100
+post_minCircularity=0.5
+post_minConvexity=0.5
+post_minInertia=0.5
+randomWalker_beta=2000
+randomWalker_method=bf
+randowWalker_maxiSize=17
+
+# farthest_points
+farthest_points_iteration=10
+
+# visualization
+colonyQC_image_spacing=100
+colonyQC_image_labelSize=2
+colonyQC_image_thickness=5
+plateQC_macOS_colonyContourPixel=2
+plateQC_macOS_imageScaleFactor=0.5
+plateQC_macOS_imageWidthBias=15
+plateQC_macOS_imageHeightBias=120
+plateQC_macOS_ComfirmWindow=(160,90)
+plateQC_macOS_TextSizeLarge=20
+plateQC_macOS_TextSizeSmall=16
+plateQC_macOS_TextSizeButton=16
+colonyQC_macOS_imageScaleFactor=0.5
+colonyQC_macOS_imageWidthBias=15
+colonyQC_macOS_imageHeightBias=120
+colonyQC_macOS_ComfirmWindow=(285,90)
+colonyQC_macOS_colonyShowBias=30
+colonyQC_macOS_colonyWindowBias=150
+colonyQC_macOS_colonyContourPixel=2
+colonyQC_macOS_colonyLabelSize=1
+colonyQC_macOS_colonyLabelThickness=2
+colonyQC_macOS_TextSizeLarge=20
+colonyQC_macOS_TextSizeMid=18
+colonyQC_macOS_TextSizeSmall=16
+colonyQC_macOS_TextSizeButton=16
+plateQC_MSwin10_colonyContourPixel=2
+plateQC_MSwin10_imageScaleFactor=0.5
+plateQC_MSwin10_imageWidthBias=15
+plateQC_MSwin10_imageHeightBias=125
+plateQC_MSwin10_ComfirmWindow=(160,100)
+plateQC_MSwin10_TextSizeLarge=16
+plateQC_MSwin10_TextSizeSmall=14
+plateQC_MSwin10_TextSizeButton=14
+colonyQC_MSwin10_imageScaleFactor=0.5
+colonyQC_MSwin10_imageWidthBias=15
+colonyQC_MSwin10_imageHeightBias=140
+colonyQC_MSwin10_ComfirmWindow=(315,100)
+colonyQC_MSwin10_colonyShowBias=30
+colonyQC_MSwin10_colonyWindowBias=195
+colonyQC_MSwin10_colonyContourPixel=2
+colonyQC_MSwin10_colonyLabelSize=1
+colonyQC_MSwin10_colonyLabelThickness=2
+colonyQC_MSwin10_TextSizeLarge=16
+colonyQC_MSwin10_TextSizeMid=15
+colonyQC_MSwin10_TextSizeSmall=14
+colonyQC_MSwin10_TextSizeButton=14
