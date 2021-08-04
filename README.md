@@ -11,20 +11,13 @@ We have tested these scripts on Linux and MacOS.
 ## Dependencies
 
 * Python 2.7,
-	- panda
-	- numpy
-	- argparse
-	- scipy
-	- sklearn
-	- skimage
-	- datetime
-	- functools
-	- pickle
-	- _NB: Above libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution)_
-	- Tkinter: for GUI
-	- cv2: for images processing
-	- PIL: for images processing
-
+	- panda, numpy, scipy
+	- sklearn, skimage
+	- datetime, functools, pickle
+	_NB: Above libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution)_
+	- Tkinter: Tk GUI toolkit
+	- cv2: opencv library
+	- PIL: python image library
 
 * [Muscle: MUltiple Sequence Comparison by Log-Expectation](https://www.drive5.com/muscle/)
 	- **Required for probe identity calculation only**
