@@ -9,7 +9,7 @@ import pandas as pd
 import argparse
 def main():
 
-	parser = argparse.ArgumentParser(description = "Program of colony contour detection and segmentation. See details in https://github.com/hym0405/CAMII")
+	parser = argparse.ArgumentParser(description = "Program of morphology-guided colony selection for isolation. See details in https://github.com/hym0405/CAMII")
 
 	parser.add_argument("-c", "--config", type = str,
                     help="Configure file of parameters for general colony segmentation and filtering")
