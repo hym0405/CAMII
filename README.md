@@ -1,10 +1,8 @@
 # Automated and Machine Learning Guided Culturomics of Personalized Gut Microbiomes
 
-Tools for plate image analysis and morphology-guided colony selection
+Tools for plate image analysis and morphology-guided colony selection (Examples can be found in ./example)
 
-(Example input and output can be found in ./example):
-
-We have tested these scripts on Linux and MacOS
+We have tested these scripts on Linux and MacOS.
 
 * **01.colony_detection.py**: Script of raw image analysis, including colony contour detection, segmentation and features extraction.
 
