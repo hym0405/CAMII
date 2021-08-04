@@ -11,23 +11,15 @@ We have tested these scripts on Linux and MacOS.
 ## Dependencies
 
 * Python 2.7,
-	- panda, numpy, scipy, sklearn, skimage, datetime, functools, pickle _(these libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution))_
+	- panda, numpy, scipy, sklearn, skimage, datetime, functools, pickle (_These libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution)_)
 	- Tkinter: Tk GUI toolkit
 	- cv2: opencv library
 	- PIL: python image library
 
-* [Muscle: MUltiple Sequence Comparison by Log-Expectation](https://www.drive5.com/muscle/)
-	- **Required for probe identity calculation only**
-	- Executable file of Muscle that compatible with your operating system should be put into ./bin or other place specified in 1.calculate_probe_identity.ipynb
-	
-* [NCBI BLAST+ Executables 2.9.0](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
-	- **Required for probe off-targets prediction only**
-	- Executable file of makeblastdb and blastn that compatible with your operating system should be put into ./bin or other place specified in 2.predict_probe_offtarget.sh
-	
-* [BURST v0.99.8 DB15](https://github.com/knights-lab/BURST)
-	- **Required for probe off-targets prediction only**
-	- Executable file of burst that compatible with your operating system should be put into ./bin or other place specified in 2.predict_probe_offtarget.sh
-
+* R 4.1.0,
+ 	- **Required for colony ordination visualization only**
+ 	- ggplot2
+ 	- reshape
 
 ## Design probe libraries for 16S and 23S rRNA sequences
 
