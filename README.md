@@ -11,10 +11,7 @@ We have tested these scripts on Linux and MacOS.
 ## Dependencies
 
 * Python 2.7,
-	- panda, numpy, scipy, sklearn, skimage, datetime, functools, pickle
-
-	_NB: Above libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution)_
-	
+	- panda, numpy, scipy, sklearn, skimage, datetime, functools, pickle _(these libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution))_
 	- Tkinter: Tk GUI toolkit
 	- cv2: opencv library
 	- PIL: python image library
