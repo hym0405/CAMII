@@ -1,6 +1,6 @@
-# Scalable and cost-effective ribonuclease-based rRNA depletion for bacterial transcriptomics
+# Automated and Machine Learning Guided Culturomics of Personalized Gut Microbiomes
 
-Tools for probe design and evaluation (Jupyter notebooks can be found in ./jupyter_notebook):
+Tools for plate image analysis and morphology-guided colony selection (Example input and output can be found in ./example):
 
 We have tested these scripts on Linux and MacOS
 
