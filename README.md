@@ -1,14 +1,15 @@
 # Automated and Machine Learning Guided Culturomics of Personalized Gut Microbiomes
 
-Tools for plate image analysis and morphology-guided colony selection (Example input and output can be found in ./example):
+Tools for plate image analysis and morphology-guided colony selection
+
+(Example input and output can be found in ./example):
 
 We have tested these scripts on Linux and MacOS
 
-* **0.design_probe.py**: design probe libraries for target 16S and 23S rRNA sequence
+* **01.colony_detection.py**: Script for plate images analysis, including colony contour detection, segmentation and colony features extraction.
 
-* **1.calculate_probe_identity.py**: calculate probe identity to various different 16S and 23S sequences to evaluate the ability of pools to be applied to different sequences
+* **02.optimize_colony_picking.py**: Script for morphology-guided colony selection and manual inspection for optimized strain isolation.
 
-* **2.predict_probe_offtarget.py**: predict potential off-targets for probe libraries
 
 ## Dependencies
 
