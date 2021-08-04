@@ -10,13 +10,13 @@ We have tested these scripts on Linux and MacOS.
 
 ## Dependencies
 
-* Python 2.7,
+* Python 2.7:
 	- panda, numpy, scipy, sklearn, skimage, datetime, functools, pickle (_These libraries are bundled together in the [Anaconda distribution](https://www.anaconda.com/distribution)_)
 	- Tkinter: Tk GUI toolkit
 	- cv2: opencv library
 	- PIL: python image library
 
-* R 4.1.0,
+* R 4.1.0:
  	- **Required for colony ordination visualization only**
  	- ggplot2
  	- reshape
