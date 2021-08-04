@@ -6,7 +6,7 @@ Tools for plate image analysis and morphology-guided colony selection
 
 We have tested these scripts on Linux and MacOS
 
-* **01.colony_detection.py**: Script of raw images analysis, including colony contour detection, segmentation and colony features extraction.
+* **01.colony_detection.py**: Script of raw image analysis, including colony contour detection, segmentation and features extraction.
 
 * **02.optimize_colony_picking.py**: Script of morphology-guided colony selection and manual inspection for optimized strain isolation.
 
