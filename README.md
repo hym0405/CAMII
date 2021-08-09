@@ -185,129 +185,32 @@ H2M3,H2,mGAM,H2,H2mGAM20200126,32
 
 
 ### Output format
-****Results of probe identity for different rRNA sequences will be saved as individual files labelled as [output_prefix].[rRNA_Label].tsv****
 
-****[example: ./output/probeIdentity.probe_dorei.uniformis_16S.tsv]****
-```
-## Target rRNA:uniformis_16S
-## Probe set designed for: dorei_16S
-## Total length of target rRNA uniformis_16S: 1515
-## Total length of probe-target alignment: 1520
-## Number of mismatches in probe-target alignment: 129
-#target_ID	target_start	target_end	probe_ID	length_alignment	num_of_mismatches	ratio
-uniformis_16S	1	60	dorei_16S_29	60	0	0.0 
-uniformis_16S	61	110	dorei_16S_28	50	4	0.08
-uniformis_16S	111	160	dorei_16S_27	50	10	0.2 
-...
-```
+****Metadata, coordinates and visualization of colonies to pick will be saved in output folder:****
+
+* **\[plate\_barcode\]\_Contours\_all.npy:** Contours of all colonies on plate saved in Python pickle object.
+* **\[plate\_barcode\]\_Metadata\_all.csv:** Metadata of all colonies on plate in CSV format, including coordinates and morphological features. Colonies will be labeled as "pick", "not_pick" and "bad_pick".
+* **\[plate\_barcode\]\_Image\_colony_trans.jpg:** Image of plate with all colonies labeled in JPEG format.
+* **\[plate\_barcode\]\_Image\_colony_\[trans or epi\]\_pick.jpg:** Trans- or Ep-illuminated images of plate with colonies to pick highlighted in JPEG format.
+* **PCAdata.csv:** PCA ordination of colonies based on their morphological features
+* **PCAdata.pickStatus.pdf:** visualization of colonies picking in PCA ordination
+* **PCAdata.plateBarcode.pdf:** visualization of colonies on different plates in PCA ordination
+* **pickingOptimization.\[processing_time\].merge.obj:** Python object containing all related images and colonies data.
+
+****[example: ./example/output_optimized_picking]****
+
 
 ### Example
 ```
-chmod +x ./1.calculate_probe_identity.py
-python2 ./1.calculate_probe_identity.py -t ./data/rRNA_sequence/rRNA_sequence.uniformis.fa \
-				-p ./output/rRNA_probe.dorei.tsv
-				-o ./output/probeIdentity.probe_dorei \
-				-m ./bin/muscle
+python2 02.optimize_colony_picking.py -c configure \
+		-m ./example/sample_metadata.csv \
+		-i ./example/output_colony_detection/colonyDetection.20210809_112425_368541.merge.obj \
+		-o output_optimized_picking
 ```
 
-## Predict potential off-targets for probe libraries
-### Description
-```
-usage: 2.predict_probe_offtarget.py [-h] [-t TRANSCRIPT] [-r RRNA] [-p PROBE]
-                                    [-pf {TSV,FASTA}] [-o OUTPUT_PREFIX]
-                                    [-mb MAKEBLASTDB_PATH] [-bn BLASTN_PATH]
-                                    [-br BURST_PATH]
+### Manual inspection
+****After image processing, you could check detected colonies on each plates and determine whether you want to keep specific plates for colony picking in following GUI:****
 
-Predict potential off-targets for probe libraries
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t TRANSCRIPT, --transcript TRANSCRIPT
-                        Path to transcript sequences. All transcript sequences
-                        should be saved in FASTA format
-  -r RRNA, --rRNA RRNA  Path to list of rRNA transcript IDs
-  -p PROBE, --probe PROBE
-                        Path to probe sequences to be evaluated. Probe
-                        sequences can be saved in either TSV or FASTA format
-                        (should be specified in probe format)
-  -pf {TSV,FASTA}, --probe_format {TSV,FASTA}
-                        Format of probe sequences, either TSV or FASTA
-                        [default: TSV]
-  -o OUTPUT_PREFIX, --output_prefix OUTPUT_PREFIX
-                        Prefix of output predicted off-targets file. Results
-                        of BLASTN and BURST will be saved in
-                        [output_prefix].BLAST.tsv and
-                        [output_prefix].BURST.tsv
-  -mb MAKEBLASTDB_PATH, --makeblastdb_path MAKEBLASTDB_PATH
-                        Path to executable file of makeblastdb (NCBI-BLAST)
-                        [default: ./bin/makeblastdb]
-  -bn BLASTN_PATH, --blastn_path BLASTN_PATH
-                        Path to executable file of blastn (NCBI-BLAST)
-                        [default: ./bin/blastn]
-  -br BURST_PATH, --burst_path BURST_PATH
-                        Path to executable file of burst [default:
-                        ./bin/burst]
-```
-### Input format
-
-**transcript sequences:** All transcript sequences should be saved in FASTA format
-
-****[example: ./data/transcriptome_annotation/dorei.ffn]****
-
-```
->GMBNIAIB_00001 Chromosomal replication initiator protein DnaA
-ATGATTGAAAACGATCACGTCGTTTTATGGGGTCGTTGTCTGAACATTATCAGAGACAAC
-GTACCTGAAACGACCTTTAAAACGTGGTTTGAGCCTATCGTACCGCTTAAATATGAGGAC
-...
->GMBNIAIB_00002 FMN reductase [NAD(P)H]
-ATGGAATCGATAAATAATAGACGGACGATCCGTAAATATAAGCAGGAAGATATTTCTGCT
-TCTTTGTTAAATGATTTGCTTGAAAAGGCATTCCGTGCTTCTACAATGGGCAATATGCAA
-...
->GMBNIAIB_00003 Vitamin B12-dependent ribonucleoside-diphosphate reductase
-GTGGAAAAACAAACGTACACCTATGACGAAGCTTTTGAAGCATCTTTACAATACTTCAAA
-GGTGATGAACTTGCTGCAAGGGTTTGGGTAAACAAATATGCAGTAAAAGATTCTTTCGGG
-...
-```
-
-**list of rRNA transcript IDs:**
-
-****[example: ./data/transcriptome_annotation/dorei.rRNA.list]****
-```
-GMBNIAIB_00241
-GMBNIAIB_00242
-GMBNIAIB_00245
-...
-```
-
-**probe sequences to be evaluated:** Probe sequences can be provided in ****either TSV or FASTA format****
-
-1. TSV format: tab-delimited table and the format is exactly same as the output of 0.design_probe.py
-2. FASTA format: [example: ./output/rRNA_probe.dorei.fa]
-
-
-### Output format
-
-****Results of BLASTN and BURST will be saved in tab-delimited [output_prefix].BLAST.tsv and [output_prefix].BURST.tsv****
-
-****[example: ./output/offtarget.longicatena.BURST.tsv]****
-
-```
-probeID			transcript(off-target)
-longicatena_23S_11      JDJECPLG_03071
-longicatena_23S_10      JDJECPLG_03071
-longicatena_23S_12      JDJECPLG_03071
-...
-```
-
-### Example
-```
-chmod +x ./2.predict_probe_offtarget.py
-python2 ./2.predict_probe_offtarget.py -t ./data/transcriptome_annotation/longicatena.ffn \
-				-r ./data/transcriptome_annotation/longicatena.rRNA.list \
-				-p ./output/rRNA_probe.longicatena.tsv \
-				-pf TSV \
-				-o ./output/offtarget.longicatena \
-				-mb ./bin/makeblastdb \
-				-bn ./bin/blastn \
-				-br ./bin/burst
-```
+<p align="center">
+  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_colony_detection.png" width="500" title="hover text">
+</p>
