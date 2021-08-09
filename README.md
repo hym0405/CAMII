@@ -47,10 +47,14 @@ optional arguments:
 ****[Important] Avoid underline in sample name or image name****
 
 
-**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. ****[example: ./example/raw_plate_images]****
+**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. 
+
+****[example: ./example/raw_plate_images]****
 
 
-**Configure file:** files containing all parameters used in colony contour detection and segmentation. ****[example: ./configure]****
+**Configure file:** files containing all parameters used in colony contour detection and segmentation. 
+
+****[example: ./configure]****
 
 ```
 # system setup
@@ -74,7 +78,7 @@ cropXMax=1750
 ```
 
 ### Output format
-****Probe sequences will be saved as a tab-delimited table****
+**** Contours, metadata and visualization of all detected colonies will be saved in output folder: \[sample_name\]\_Contours\_all.npy, \[sample_name\]\_Metadata\_all.csv and \[sample_name\]\_Image\_colony_trans.jpg****
 
 ****[example: ./output/rRNA_probe.dorei.tsv]****
 ```
