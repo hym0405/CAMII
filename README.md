@@ -103,7 +103,9 @@ cropXMax=1750
 
 ![alt text](https://github.com/hym0405/CAMII/misc/check_colony_detection.py.png?raw=true)
 
-
+<p align="center">
+  <img src="https://github.com/hym0405/CAMII/misc/check_colony_detection.py.png" width="350" title="hover text">
+</p>
 
 ### Example of usage
 ```
