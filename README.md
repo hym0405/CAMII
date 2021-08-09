@@ -47,32 +47,12 @@ optional arguments:
 ****[Important] Avoid underline in sample or image names****
 
 
-**Input folder:** trans-illuminated images and epi-illuminated images in BMP format 
+**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images.
 
-****[example: ./configure]****
+****[example: ./example/raw_plate_images]****
 
-```
-# system setup
-house_bin=./bin
-parameters_dir=./parameters
 
-# image calibration
-calib_gaussian_kernal=(27,27)
-calib_gaussian_iteration=20
-calib_parameter_PATH=./parameters/calib_parameter.npz
-calib_contrast_trans_alpha=5
-calib_contrast_trans_beta=-100
-calib_contrast_trans_beta=-70
-
-# image crop
-cropYMin=150
-cropYMax=1150
-cropXMin=150
-cropXMax=1750
-...
-```
-
-**Configure file:** files containing all parameters used in colony contour detection and segmentation
+**Configure file:** files containing all parameters used in colony contour detection and segmentation.
 
 ****[example: ./configure]****
 
