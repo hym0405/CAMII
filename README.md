@@ -85,7 +85,7 @@ cropXMax=1750
 * **\[plate\_barcode\]\_Image\_colony_trans.jpg:** Image of plate with all colonies labeled in JPEG format.
 * **colonyDetection.\[processing_time\].merge.obj:** Python object containing all related images and colonies data. This file will be used as input for downstream optimized colony selection.
 
-****[Important]**** A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in input folder
+****[Important]**** A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in that folder
 
 ****[example: ./example/output_colony_detection]****
 
