@@ -101,10 +101,10 @@ cropXMax=1750
 ### Manual inspection
 ****After image processing, you could check detected colonies on each plates and determine whether you want to keep specific plates for colony picking in following GUI:****
 
-![alt text](https://github.com/hym0405/CAMII/misc/check_colony_detection.py.png?raw=true)
+![alt text](https://github.com/hym0405/CAMII/blob/main/misc/check_colony_detection.png)
 
 <p align="center">
-  <img src="https://github.com/hym0405/CAMII/misc/check_colony_detection.py.png" width="350" title="hover text">
+  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_colony_detection.png" width="350" title="hover text">
 </p>
 
 ### Example of usage
