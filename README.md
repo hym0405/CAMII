@@ -80,29 +80,28 @@ cropXMax=1750
 ### Output format
 ****Contours, metadata and visualization of all detected colonies will be saved in output folder:****
 
-* **\[plate\_barcode\]\_Contours\_all.npy: Contours of colonies on plate saved in Python pickle object.**
-* **\[plate\_barcode\]\_Metadata\_all.csv: Metadata of colonies on plate in CSV format, including coordinates and morphological features.**
-* **\[plate\_barcode\]\_Image\_colony_trans.jpg: Image of plate with all colonies labeled in JPEG format.**
+* **\[plate\_barcode\]\_Contours\_all.npy:** Contours of colonies on plate saved in Python pickle object.
+* **\[plate\_barcode\]\_Metadata\_all.csv:** Metadata of colonies on plate in CSV format, including coordinates and morphological features.
+* **\[plate\_barcode\]\_Image\_colony_trans.jpg:** Image of plate with all colonies labeled in JPEG format.
 
-****[example: ./output/rRNA_probe.dorei.tsv]****
+****[Important] A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in input folder****
+
+****[example: ./example/output_colony_detection]****
+
+**\[plate\_barcode\]\_Metadata\_all.csv:**
 ```
-rRNA_label      probe_ID        probe_sequence
-dorei_16S       dorei_16S_0     AGGTGTTCCAGCCGC...
-dorei_16S       dorei_16S_1     GTTTTACCCTAGGGC...
-dorei_16S       dorei_16S_2     TCCCATGGCTTGACG...
-...		...		...
-dorei_23S       dorei_23S_0     TAAGGAAAGTGGACG...
-dorei_23S       dorei_23S_1     CAACGTCGTAGTCTA...
-dorei_23S       dorei_23S_2     TCGTACTTAGATGCT...
+,X,Y,Area,Perimeter,Radius,Circularity,Convexity,...
+0,373,940,139.0,46.142,7.245,0.820,0.958,...
+1,1490,936,119.5,42.727,6.082,0.822,0.959,...
+2,1027,929,52.0,27.656,4.472,0.854,0.981,...
 ...
 ```
 
 ### Example
 ```
-chmod +x ./0.design_probe.py
-python2 ./0.design_probe.py -i ./data/rRNA_sequence/rRNA_sequence.dorei.fa \
-		-o ./output/rRNA_probe.dorei.tsv \
-		-l 50
+python2 ./01.colony_detection.py -c ./configure \
+		-i ./example/raw_plate_images \
+		-o ./example/output_colony_detection
 ```
 
 
