@@ -21,7 +21,7 @@ We have tested these scripts on Linux and MacOS.
  	- ggplot2
  	- reshape
 
-## Design probe libraries for 16S and 23S rRNA sequences
+## Colony contour detection, segmentation and features extraction from raw plate images
 
 ### Description
 ```
@@ -44,7 +44,7 @@ optional arguments:
                         exists
 ```
 ### Input format
-****[Important] Avoid underline in sample name or plate barcode****
+****[Important]**** Avoid underline in sample name or plate barcode
 
 
 **Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[plate\_barcode\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. 
@@ -84,7 +84,7 @@ cropXMax=1750
 * **\[plate\_barcode\]\_Metadata\_all.csv:** Metadata of colonies on plate in CSV format, including coordinates and morphological features.
 * **\[plate\_barcode\]\_Image\_colony_trans.jpg:** Image of plate with all colonies labeled in JPEG format.
 
-****[Important] A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in input folder****
+****[Important]**** A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in input folder
 
 ****[example: ./example/output_colony_detection]****
 
