@@ -215,7 +215,7 @@ python2 02.optimize_colony_picking.py -c configure \
   <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_optimize_colony_picking1.png" width="427" title="hover text">
 </p>
 
-****You could check selected colonies on plates or individually and also remove colonies that are (1) artifacts or (2) failed to be segemented by selecting them and click Re-pick****
+You could check selected colonies on plates or individually and also remove colonies that are (1) artifacts or (2) failed to be segemented by selecting them and click Re-pick
 
 <p align="center">
  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_optimize_colony_picking2.png" width="427" title="hover text">
