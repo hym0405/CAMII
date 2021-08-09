@@ -44,10 +44,10 @@ optional arguments:
                         exists
 ```
 ### Input format
-****[Important] Avoid underline in sample name or image name****
+****[Important] Avoid underline in sample name or plate barcode****
 
 
-**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. 
+**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[plate\_barcode\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. 
 
 ****[example: ./example/raw_plate_images]****
 
@@ -78,7 +78,11 @@ cropXMax=1750
 ```
 
 ### Output format
-**** Contours, metadata and visualization of all detected colonies will be saved in output folder: \[sample_name\]\_Contours\_all.npy, \[sample_name\]\_Metadata\_all.csv and \[sample_name\]\_Image\_colony_trans.jpg****
+****Contours, metadata and visualization of all detected colonies will be saved in output folder:****
+
+* **\[plate\_barcode\]\_Contours\_all.npy: Contours of colonies on plate saved in Python pickle object.**
+* **\[plate\_barcode\]\_Metadata\_all.csv: Metadata of colonies on plate in CSV format, including coordinates and morphological features.**
+* **\[plate\_barcode\]\_Image\_colony_trans.jpg: Image of plate with all colonies labeled in JPEG format.**
 
 ****[example: ./output/rRNA_probe.dorei.tsv]****
 ```
