@@ -212,5 +212,6 @@ python2 02.optimize_colony_picking.py -c configure \
 ****After image processing, you could check detected colonies on each plates and determine whether you want to keep specific plates for colony picking in following GUI:****
 
 <p align="center">
-  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_colony_detection.png" width="500" title="hover text">
+  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_optimize_colony_picking1.png" width="500" title="hover text">
+  <img src="https://github.com/hym0405/CAMII/blob/main/misc/check_optimize_colony_picking2.png" width="500" title="hover text">
 </p>
