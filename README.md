@@ -83,6 +83,7 @@ cropXMax=1750
 * **\[plate\_barcode\]\_Contours\_all.npy:** Contours of colonies on plate saved in Python pickle object.
 * **\[plate\_barcode\]\_Metadata\_all.csv:** Metadata of colonies on plate in CSV format, including coordinates and morphological features.
 * **\[plate\_barcode\]\_Image\_colony_trans.jpg:** Image of plate with all colonies labeled in JPEG format.
+* **colonyDetection.\[processing_time\].merge.obj:** Python object containing all related images and colonies data. This file will be used as input for downstream optimized colony selection.
 
 ****[Important]**** A file named image_processed.txt will be written to input folder to indicate images in this folder have been processed. Please delete the file if you want to rerun the colony detection for images in input folder
 
@@ -97,7 +98,7 @@ cropXMax=1750
 ...
 ```
 
-### Example
+### Example of usage
 ```
 python2 ./01.colony_detection.py -c ./configure \
 		-i ./example/raw_plate_images \
@@ -105,7 +106,7 @@ python2 ./01.colony_detection.py -c ./configure \
 ```
 
 
-## Calculate probe identity to new rRNA sequences to evaluate the ability of pools to be applied
+## Morphology-guided colony selection for optimized strain isolation
 
 ### Description
 ```
