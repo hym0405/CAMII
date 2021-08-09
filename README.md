@@ -25,39 +25,78 @@ We have tested these scripts on Linux and MacOS.
 
 ### Description
 ```
-usage: 0.design_probe.py [-h] [-i INPUT] [-o OUTPUT] [-l LENGTH]
+usage: 01.colony_detection.py [-h] [-c CONFIG] [-i INPUT] [-o OUTPUT]
 
-Design probe libraries for bacterial rRNA depletion
+Program of colony contour detection and segmentation.
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c CONFIG, --config CONFIG
+                        Configure file of parameters for general colony
+                        segmentation and filtering
   -i INPUT, --input INPUT
-                        Path to rRNA sequences. All rRNA sequences should be
-                        labelled as [SampleID]_16S and [SampleID]_23S in FASTA
-                        format
+                        Input folder containing raw images of plates, both
+                        trans-illuminated and epi-illuminated. A file named
+                        "image_processed.txt" will be written to the folder
+                        after processing
   -o OUTPUT, --output OUTPUT
-                        Path to output probe file. Probe sequences will be
-                        saved as a tab-delimited table
-  -l LENGTH, --length LENGTH
-                        Length of probes [default: 50]
+                        Output folder. The folder will be created if not
+                        exists
 ```
 ### Input format
-****[Important] Avoid underline in sample IDs****
+****[Important] Avoid underline in sample or image names****
 
-**rRNA sequence:** 16S and 23S rRNA sequence in FASTA format and all rRNA sequences should be labelled as [SampleID]_16S and [SampleID]_23S
 
-****In our paper, [Prokka](https://github.com/tseemann/prokka) is used to predict 16S and 23S rRNA sequences of bacterial species****
+**Input folder:** trans-illuminated images and epi-illuminated images in BMP format 
 
-****[example: ./data/rRNA_sequence/rRNA_sequence.dorei.fa]****
+****[example: ./configure]****
 
 ```
->dorei_16S
-AGAGTTTGATCCTGGCTC...
-...
->dorei_23S
-GAAAGTAAAGAAGGGCGC...
+# system setup
+house_bin=./bin
+parameters_dir=./parameters
+
+# image calibration
+calib_gaussian_kernal=(27,27)
+calib_gaussian_iteration=20
+calib_parameter_PATH=./parameters/calib_parameter.npz
+calib_contrast_trans_alpha=5
+calib_contrast_trans_beta=-100
+calib_contrast_trans_beta=-70
+
+# image crop
+cropYMin=150
+cropYMax=1150
+cropXMin=150
+cropXMax=1750
 ...
 ```
+
+**Configure file:** files containing all parameters used in colony contour detection and segmentation
+
+****[example: ./configure]****
+
+```
+# system setup
+house_bin=./bin
+parameters_dir=./parameters
+
+# image calibration
+calib_gaussian_kernal=(27,27)
+calib_gaussian_iteration=20
+calib_parameter_PATH=./parameters/calib_parameter.npz
+calib_contrast_trans_alpha=5
+calib_contrast_trans_beta=-100
+calib_contrast_trans_beta=-70
+
+# image crop
+cropYMin=150
+cropYMax=1150
+cropXMin=150
+cropXMax=1750
+...
+```
+
 ### Output format
 ****Probe sequences will be saved as a tab-delimited table****
 
