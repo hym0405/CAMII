@@ -44,17 +44,13 @@ optional arguments:
                         exists
 ```
 ### Input format
-****[Important] Avoid underline in sample or image names****
+****[Important] Avoid underline in sample name or image name****
 
 
-**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images.
-
-****[example: ./example/raw_plate_images]****
+**Input folder:** trans-illuminated images and epi-illuminated images in BMP format. Files are named as \[sample_name\]\_\[imaging_time\].bmp and trans-illuminated images were imaged first so \[imaging_time\] is earlier than epi-illuminated images. ****[example: ./example/raw_plate_images]****
 
 
-**Configure file:** files containing all parameters used in colony contour detection and segmentation.
-
-****[example: ./configure]****
+**Configure file:** files containing all parameters used in colony contour detection and segmentation. ****[example: ./configure]****
 
 ```
 # system setup
