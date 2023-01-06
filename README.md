@@ -2,6 +2,9 @@
 
 Tools for plate image analysis and morphology-guided colony selection (Examples can be found in ./example)
 
+Huang, Y., Sheth U. R., Zhao, S., Cohen, L., Dabaghi, K., Moody, T., Sun Y., Ricaurte D., Richardson M., Velez-Cortes F., Blazejewski T., Kaufman A., Ronda C., and Wang H. H., High-throughput microbial culturomics using automation and machine learning. GitHub. https://github.com/hym0405/CAMII (2023).
+
+
 We have tested these scripts on Linux and MacOS.
 
 * **01.colony_detection.py**: Script of raw image analysis, including colony contour detection, segmentation and features extraction.
